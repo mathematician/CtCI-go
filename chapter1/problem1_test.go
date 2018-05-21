@@ -1,14 +1,16 @@
-package problem1
+package chapter1
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
-func testIsUniq(t *testing.T) {
-	str := "abcdefg"
-	fmt.Println(str)
-	if false {
-		t.Errorf("failure")
+func TestIsUniq(t *testing.T) {
+	uniqStr := "abcdefg"
+	notUniqStr := "abcdefcg"
+
+	if !isUniq(uniqStr) {
+		t.Errorf("failure, expected %s to have only unique characters", uniqStr)
+	}
+
+	if isUniq(notUniqStr) {
+		t.Errorf("failure, expected %s to have only unique characters", notUniqStr)
 	}
 }
